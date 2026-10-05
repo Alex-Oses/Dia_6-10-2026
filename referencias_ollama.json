@@ -1,0 +1,23 @@
+{
+  "_meta": {
+    "dia": 10,
+    "fecha": "2026-09-15",
+    "tema": "Despliegue local con Ollama y Gemma 4",
+    "nota_metodologica": "Los tamanos y precisiones de los tags de Ollama se leyeron de la ficha oficial ollama.com/library/gemma4/tags el 2026-09-15. La VRAM de la tabla del Dia 9 (Google) es de los pesos en BF16/Q4_0; el tamano de descarga de Ollama incluye el proyector multimodal, de ahi la diferencia. Los tokens/segundo y las latencias son medidas de ejecucion real en la maquina del alumno el 2026-09-15.",
+    "consultado": "2026-09-15",
+    "tags_gemma4_ollama": [
+      {"tag": "gemma4:e4b", "gb": 6.6, "equivalente": "Q4_0", "params_efectivos": "4,5 B", "params_totales": "8,00 B"},
+      {"tag": "gemma4:e2b", "gb": 4.6, "equivalente": "Q4_0", "params_efectivos": "2,3 B", "params_totales": "5,12 B"},
+      {"tag": "gemma4:12b", "gb": 7.7, "equivalente": "Q4_0", "params_totales": "11,96 B"},
+      {"tag": "gemma4:26b-a4b", "gb": 16.0, "equivalente": "Q4_0", "params_activos": "3,8 B", "params_totales": "25,81 B"},
+      {"tag": "gemma4:31b", "gb": 19.0, "equivalente": "Q4_0", "params_totales": "31,27 B"}
+    ],
+    "tags_alternativos": [
+      {"tag": "gemma4:e4b-it-q8", "gb": null, "nota": "8 bits. Mejor calidad, mas RAM."},
+      {"tag": "gemma4:e4b-it-bf16", "gb": null, "nota": "Sin cuantizar. 17,9 GB: no cabe en este portatil."},
+      {"tag": "gemma4:e4b-mlx", "gb": null, "nota": "Solo Apple Silicon. No aplica en Windows."},
+      {"tag": "gemma4:e4b-nvfp4", "gb": null, "nota": "Formato NVIDIA Blackwell. Este equipo no es NVIDIA."}
+    ],
+    "nota_ram": "gemma4:e4b ocupa 6,6 GB en RAM al cargar (pesos Q4_0 mas mmproj mas KV cache). Con 8 GB de RAM total es un limite; el enunciado avisa de esa possibility y propone e2b."
+  }
+}

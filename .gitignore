@@ -1,0 +1,40 @@
+# Este entregable no maneja credenciales, pero se listan por si se anaden
+# La parte remota (VM de Azure) necesita un token: nunca debe subirse.
+.env
+*.env
+.env.*
+!.env.example
+*.key
+*.pem
+secrets*.json
+
+# Pesos de modelo: NUNCA en git. Ollama los guarda en ~/.ollama/models
+*.gguf
+*.ggml
+*.safetensors
+*.bin
+*.pt
+*.pth
+ollama/
+.ollama/
+
+# Logs de descarga de ollama: van a stderr y traen secuencias ANSI
+pull_*.log
+pull_*.err
+*.ansi
+
+# Python
+venv/
+.venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Editores y sistema
+.vscode/
+.idea/
+Thumbs.db
+.DS_Store
+desktop.ini

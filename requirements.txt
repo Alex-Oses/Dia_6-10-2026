@@ -1,0 +1,30 @@
+# Dia 10 - Despliegue local con Ollama y Gemma 4
+#
+# Intencionalmente vacio de dependencias, igual que en el Dia 9.
+#
+# Los dos scripts usan SOLO la biblioteca estandar de Python (urllib, json, re,
+# statistics, time). No hay nada que instalar con pip.
+#
+# Es una decision, no una comodidad: el objeto del dia es ver como funciona un
+# despliegue local, y el cliente HTTP de Ollama tiene solo cuatro endpoints.
+# Enseñar el JSON que se envia y el JSON que se recibe (y de donde sale
+# eval_duration / eval_count) es justamente el objetivo. Envolverlo en un SDK
+# esconderia justo lo que hay que entender.
+#
+# Requisito unico: Ollama (https://ollama.com), que es el motor, no una libreria.
+#
+#   ollama pull gemma4:e4b
+#
+# Si en algun momento se quiere cargar pesos de Hugging Face directamente con
+# transformers en vez de usar Ollama (por ejemplo google/gemma-4-E4B-it), haria
+# falta:
+#
+#   pip install torch transformers accelerate safetensors
+#
+# Y para multimodal con imagen/audio en transformers, ademas:
+#
+#   pip install librosa
+#
+# Nota sobre Gemma 4 y thinking: el modo razonamiento viene ACTIVADO por
+# defecto y con limites bajos de tokens produce respuestas vacias. Se envia
+# think=false en la peticion. Ver test_thinking.py y el README, seccion 3.
